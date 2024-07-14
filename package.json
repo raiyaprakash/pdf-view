@@ -1,0 +1,16 @@
+{
+  "name": "elderjs-project",
+  "version": "1.0.0",
+  "description": "Elder.js project description",
+  "main": "index.js",
+  "scripts": {
+    "build": "elder build",
+    "start": "elder serve"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "elderjs": "^1.4.0"
+    // Add other dependencies as needed
+  }
+}
