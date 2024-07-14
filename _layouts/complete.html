@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='en-GB'>
+<head>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
+  <!--[if IE]><meta content='IE=edge; IE=9; IE=8; IE=7; chrome=1' http-equiv='X-UA-Compatible'/><![endif]-->
+  <title>Complete</title>
+  <link href='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' rel='icon' type='image/x-icon'/>
+  <link href='{{ page.url }}' rel='canonical'/>
+  <meta content='noindex,noarchive' name='robots'/>
+  <meta content='no-referrer' name='referrer'/>
+  <meta content='Complete' name='description'/>
+</head>
+<body style=" background: #E8EAF6; ">
+  <div style=" margin: 0 auto; max-width: 1000px; text-align: center; padding-top: 100px; color: #111; ">
+    <div style=" font-family: Arial,Helvetica,sans-serif; font-size: 30px; ">Work is Complete!</div>
+    <div style=" font-family: Georgia,'Times New Roman',serif; font-size: 14px; padding-top: 14px; ">Thanks for using mobile version.</div>
+  </div>
+  <div id="eframe" style="display:none;">
+    <form name="gsheet">
+      <textarea name="uses" id="checkvalue" type="text" placeholder="uses">{{ page.n }}</textarea>
+      <textarea name="data" type="text" placeholder="data">{{ page.u }}</textarea>
+    </form>
+  </div>
+  <script>
+    var uri, curi;
+    if (document.getElementById("checkvalue").value != "null") {
+      fetch("https://script.google.com/macros/s/AKfycbyklOR4wy158u1SYR_YLQ5L8kwAJHgL45a5H_OXHxSwuWrIoQQ5P3YhK3E-FL43_kvP/exec", {
+        method: "POST",
+        body: new FormData(document.forms.gsheet)
+      });
+      uri = window.location.toString();
+      if (uri.indexOf("?") > 0) {
+        curi = uri.substring(0, uri.indexOf("?"));
+        window.history.replaceState({}, document.title, curi);
+      }
+    }
+  </script>
+</body>
+</html>
